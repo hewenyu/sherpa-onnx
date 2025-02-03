@@ -1,18 +1,17 @@
 function(download_simple_sentencepiece)
   include(FetchContent)
 
-  set(simple-sentencepiece_URL  "https://github.com/pkufool/simple-sentencepiece/archive/refs/tags/v0.7.tar.gz")
-  set(simple-sentencepiece_URL2 "https://hf-mirror.com/csukuangfj/sherpa-onnx-cmake-deps/resolve/main/simple-sentencepiece-0.7.tar.gz")
-  set(simple-sentencepiece_HASH "SHA256=1748a822060a35baa9f6609f84efc8eb54dc0e74b9ece3d82367b7119fdc75af")
+  set(simple-sentencepiece_URL  "https://github.com/hewenyu/simple-sentencepiece/archive/refs/tags/v0.1.4.tar.gz")
+  set(simple-sentencepiece_URL2 "")
+  # set(simple-sentencepiece_HASH "SHA256=1748a822060a35baa9f6609f84efc8eb54dc0e74b9ece3d82367b7119fdc75af")
 
   # If you don't have access to the Internet,
   # please pre-download simple-sentencepiece
   set(possible_file_locations
-    $ENV{HOME}/Downloads/simple-sentencepiece-0.7.tar.gz
-    ${CMAKE_SOURCE_DIR}/simple-sentencepiece-0.7.tar.gz
-    ${CMAKE_BINARY_DIR}/simple-sentencepiece-0.7.tar.gz
-    /tmp/simple-sentencepiece-0.7.tar.gz
-    /star-fj/fangjun/download/github/simple-sentencepiece-0.7.tar.gz
+    $ENV{HOME}/Downloads/simple-sentencepiece-0.1.4.tar.gz
+    ${CMAKE_SOURCE_DIR}/simple-sentencepiece-0.1.4.tar.gz
+    ${CMAKE_BINARY_DIR}/simple-sentencepiece-0.1.4.tar.gz
+    /tmp/simple-sentencepiece-0.1.4.tar.gz
   )
 
   foreach(f IN LISTS possible_file_locations)
@@ -32,8 +31,8 @@ function(download_simple_sentencepiece)
     URL
       ${simple-sentencepiece_URL}
       ${simple-sentencepiece_URL2}
-    URL_HASH
-      ${simple-sentencepiece_HASH}
+    # URL_HASH
+    #   ${simple-sentencepiece_HASH}
   )
 
   FetchContent_GetProperties(simple-sentencepiece)
